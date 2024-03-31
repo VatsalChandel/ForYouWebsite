@@ -101,7 +101,6 @@ if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.
 			counter = 0;
 		}
 	
-	
 	}} else {
 		toggleButton.addEventListener("mouseover", changeButton);
 		function changeButton()
