@@ -4,6 +4,8 @@ const root = document.documentElement;
 const toggleButton = document.getElementById('toggleButton');
 const yesButton = document.getElementById("yesButton");
 const yayHidden = document.getElementsByClassName("yayHidden");
+var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
 
 let counter = 0;
 const messages = [
@@ -78,25 +80,50 @@ function showYippeeCat(event) {
 }
 
 
+var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+	toggleButton.addEventListener("click", changeButton);
+	function changeButton()
+	{
+		yesButton.classList.add("move-left");
+		const windowWidth = window.innerWidth - 170;
+		const windowHeight = window.innerHeight - 170;
+		var i = Math.floor(Math.random() * windowWidth);
+		var j = Math.floor(Math.random() * windowHeight);
+		toggleButton.style.position = 'absolute';
+		toggleButton.style.left = i+"px";
+		toggleButton.style.top = j+"px";
+		counter++;
+	
+		if (counter == 3) {
+			const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+			alert(randomMessage)
+			counter = 0;
+		}
+	
+	
+	}} else {
+		toggleButton.addEventListener("mouseover", changeButton);
+		function changeButton()
+		{
+			yesButton.classList.add("move-left");
+			const windowWidth = window.innerWidth - 170;
+			const windowHeight = window.innerHeight - 170;
+			var i = Math.floor(Math.random() * windowWidth);
+			var j = Math.floor(Math.random() * windowHeight);
+			toggleButton.style.position = 'absolute';
+			toggleButton.style.left = i+"px";
+			toggleButton.style.top = j+"px";
+			counter++;
+		
+			if (counter == 3) {
+				const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+				alert(randomMessage)
+				counter = 0;
+			}
+		
+		
+		}}
+
+
 //teleport button
-toggleButton.addEventListener("mouseover", changeButton);
-function changeButton()
-{
-	yesButton.classList.add("move-left");
-	const windowWidth = window.innerWidth - 170;
-    const windowHeight = window.innerHeight - 170;
-	var i = Math.floor(Math.random() * windowWidth);
-    var j = Math.floor(Math.random() * windowHeight);
-	toggleButton.style.position = 'absolute';
-    toggleButton.style.left = i+"px";
-    toggleButton.style.top = j+"px";
-	counter++;
-
-	if (counter == 3) {
-		const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-		alert(randomMessage)
-		counter = 0;
-	}
-
-
-}
