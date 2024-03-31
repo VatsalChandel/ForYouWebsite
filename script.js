@@ -5,6 +5,17 @@ const toggleButton = document.getElementById('toggleButton');
 const yesButton = document.getElementById("yesButton");
 const yayHidden = document.getElementsByClassName("yayHidden");
 
+let counter = 0;
+const messages = [
+	"You cant escape me 🫀",
+	"You're gonna have to click yes eventually ❤️",
+	"Make this easier for both of us and click yes 🫶",
+	"Stop playing hard to get, I know you want me 😎",
+	"PLS PLS PLS PLS Click yes 🙏",
+	"You're making me want to go back to my ex 🫣",
+	"I'll make you pancakes 🥞"
+];
+
 // Function to toggle light and dark themes
 function toggleTheme() {
 	if (themeSwitch.checked) {
@@ -67,8 +78,6 @@ function showYippeeCat(event) {
 }
 
 
-
-
 //teleport button
 toggleButton.addEventListener("mouseover", changeButton);
 function changeButton()
@@ -81,4 +90,13 @@ function changeButton()
 	toggleButton.style.position = 'absolute';
     toggleButton.style.left = i+"px";
     toggleButton.style.top = j+"px";
+	counter++;
+
+	if (counter == 3) {
+		const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+		alert(randomMessage)
+		counter = 0;
+	}
+
+
 }
