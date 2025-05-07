@@ -11,11 +11,12 @@ let counter = 0;
 const messages = [
 	"You cant escape me 🫀",
 	"You're gonna have to click yes eventually ❤️",
-	"Make this easier for both of us and click yes 🫶",
-	"Stop playing hard to get, I know you want me 😎",
+	"I have your location 🫶",
+	"We can go to Mr West",
 	"PLS PLS PLS PLS Click yes 🙏",
-	"You're making me want to go back to my ex 🫣",
-	"I'll make you pancakes 🥞"
+	"1525 9th Ave, Seattle, WA 98101, APT 2408",
+	"I'll show up to your office 🥞",
+	"One more time before you leave 🥹",
 ];
 
 // Function to toggle light and dark themes
